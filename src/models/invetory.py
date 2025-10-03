@@ -1,5 +1,4 @@
 
-
 class Invetory:        
     def __init__(self):
        self.product = []
@@ -48,10 +47,15 @@ class Invetory:
     
     def close_invetory(self, confirm):
         from src.controllers.controller_invetory import user_invetory
+        from src.Views.view_creator import Show_menu
         
         if confirm == 'Y':
             print("leaving invetory...")
+        
+        elif confirm == 'N':
+            print("Returning to menu...\n")
+            return Show_menu(), user_invetory()
             
         else:
-            print("Returning to menu")
+            print("Please say Y or N. ")
             return user_invetory()
